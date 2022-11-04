@@ -1,11 +1,19 @@
-const { SlashCommandBuilder, Message, Client,GatewayIntentBits} = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder} = require('discord.js');
+
 
 
 module.exports = {
     data: new SlashCommandBuilder()
+        
         .setName('github')
-        .setDescription('Bots author'),
+        .setDescription('author'),
     async execute(interaction){
-        await interaction.reply(`[github](github.com/TolunayMutlu)`);
+        const myEmbed = new EmbedBuilder()
+    .setColor('White')
+    .setAuthor({ name: 'Tolunay Mutlu', iconURL: 'https://avatars.githubusercontent.com/u/48354297?v=4', url: 'https://github.com/TolunayM' })
+    .setImage('https://avatars.githubusercontent.com/u/48354297?v=4')
+    .setTitle('If you click my name you can reach me on github 😎')
+        await interaction.reply({embeds: [myEmbed]});
     },
 };
+
