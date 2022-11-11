@@ -31,7 +31,6 @@ module.exports = {
     async execute(interaction){
         
         const rand = Math.floor(Math.random() * 4) + 1;
-        console.log(ascii,rand);
         await interaction.reply(`${ascii[rand]}`); 
         }
 };
